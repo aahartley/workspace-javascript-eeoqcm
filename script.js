@@ -7,4 +7,4 @@ $('img').each(function(){
     var localpath = $(this).attr('src');
     var remotepath = "https://raw.githubusercontent.com/yilianz/workspace-javascript/master/" +localpath;
     $(this).attr('src',remotepath);
-});
+}); 
