@@ -49,11 +49,22 @@
             <h1> JavaScript Escape Sequence</h1>
             <p> Write an image to the page </p>
             <script>
-              document.write(" <img src=\"img/die1.png\"/>");
+              document.write("<img src=\"img/die1.png\"/>");
               </script>
 
 
             <p> Write a table to the page </p>
+            <table><tr><td>first</td><td>second</td></tr></table>
+            <script>
+              document.write("<table>");
+              document.write("<tr>");
+              document.write("<td>hi</td>");
+
+              document.write("</tr>");
+
+              document.write("</table>");
+
+              </script>
 
         </div>
 
@@ -61,6 +72,8 @@
             <h1>Window and document object </h1>
             <p> Try alert, open, location, url </p>
             <script>
+               // alert("g");
+               document.write(window.location.href);
 
             </script>
 
@@ -69,7 +82,7 @@
 
         <div class="practice">
             <h1> Get textcontent of an element </h1>
-            <p>Perform arithmetic operation on <span id="num1"> 4 </span> and <span id="num2">5 </span> </p>
+            <p>Perform arithmetic operation on <span id="n1"> 4 </span> and <span id="n2">5 </span> </p>
             <p>Result:
                 <script src="js/arith.js"></script>
             </p>
