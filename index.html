@@ -159,16 +159,40 @@
                 </p>
             </form>
             <script>
+              //event blur
+              function welcome(){
+                //display a welcome message
+                var name = document.getElementById('cName').value;
+                var outputE = document.getElementById('message');
+                outputE.innerHTML="Welcome to Javascript Event <b>"+name+"</b>"
+              }
+              //event handler
+              //action
+              var fE= document.getElementById('cName');
+              fE.addEventListener('blur',welcome,false);
 
-              </script>
+            </script>
 
         </div>
 
         <div class="practice">
             <h1> Practice - Calculate Square</h1>
             Calculating Square:
-            <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-            <label id="result"> ? </label>
+            <input type="text" id="num5" placeholder="Type in a number"> <sup> 2 </sup> =
+            <label id="result5"> ? </label>
+            <script>
+              function square(){
+                var square = parseInt(document.getElementById('num5').value);
+                var ans = Math.pow(square,2);
+
+                var result = document.getElementById('result5');
+
+                result.textContent=" "+ans;
+
+              }
+              var fE = document.getElementById('num5');
+              fE.addEventListener('blur',square,false);
+              </script>
 
         </div>
 
@@ -182,8 +206,18 @@
 
             <input type="button" id="tryit" value="Click and Display">​
 
-            <div id="message">​
+            <div id="message1">​
             </div>
+            <script>
+              //handler
+              function convertHTML(){
+                var inputcode = document.getElementById('code').value;
+                document.getElementById('message1').innerHTML = inputcode;
+
+              }
+              // add listenr
+              document.getElementById('tryit').addEventListener('click',convertHTML);
+              </script>
 
 
         </div>
@@ -202,13 +236,32 @@
                     <option> Good</option>
                 </select>.</p>
 
-            <p id="price">
+            <p id="price2">
 
             </p>
 
             <script type="text/javascript">
+            function getPrice(){
+              var yearCar = document.getElementById('year').value;
+              var conditionc = document.getElementById('condition').value;
+              console.log(yearCar+" "+conditionc);
+              var boxIndex = document.getElementById('year').selectedIndex;
+              console.log(boxIndex)
+;              var price=0;
+              if(yearCar=="2003" && conditionc=="Good"){
+                price=3500;
+              }
+              else if(yearCar=="2004" && conditionc=="Fair"){
+                price=4500;
+              }
+
+                document.getElementById('price2').textContent=price;
 
 
+            }
+
+            document.getElementById('year').addEventListener('change',getPrice);
+            document.getElementById('condition').addEventListener('change',getPrice);
 
             </script>
 
