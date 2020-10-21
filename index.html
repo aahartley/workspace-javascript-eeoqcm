@@ -273,6 +273,35 @@
                 <input type="text" id="theme">
             </p>
 
+        <script type="text/javascript">
+            document.getElementById('theme').addEventListener('blur',changeTheme,false);
+            
+            function changeTheme(){
+              var theme = document.getElementById('theme').value;
+              var color;
+              switch(theme){
+                case "warm":
+                  color = "blue";
+                  break;
+                case "hot":
+                  color = "red";
+                  break;
+                  case "cool":
+                  color ="pink";
+                  break;
+                  case "cold":
+                  color="black";
+                  break;
+                default:
+                  color="white";
+
+              }
+                 document.body.setAttribute('style', "background-color: "+color);
+
+
+            }
+
+          </script>
         </div>
 
 
