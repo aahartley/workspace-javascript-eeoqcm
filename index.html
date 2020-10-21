@@ -325,11 +325,42 @@
 
             </p>
             <p>
-                <input type="button" value="Check Premium">
+                <input type="button" id="btP" value="Check Premium">
             </p>
-            <p id="result">
+            <p id="premium">
 
             </p>
+            <script>
+                document.getElementById('btP').addEventListener('click',premium);
+                 function premium() {
+                var e1 = document.querySelector('input[name="coverage"]:checked');
+                var coverage = parseInt(e1.value);
+
+                var e2 = document.getElementById("agegroup");
+                var ageindex = e2.selectedIndex;
+                
+
+
+                var agefactor = 0;
+                switch (ageindex) {
+                    case 0:
+                        agefactor = 0.08;
+                        break;
+                    case 1:
+                        agefactor = 0.09;
+                        break;
+                    case 2:
+                        agefactor = 0.11; break
+                    default: agefactor = 0.29;
+                        break;
+                }
+
+                var answer = 10 + agefactor * coverage/1000;
+                document.getElementById('premium').textContent = "It is "+ answer;
+
+                
+            }
+              </script>
 
         </div>
 
