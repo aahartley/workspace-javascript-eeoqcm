@@ -451,7 +451,7 @@
         <div class="practice">
             <h1>Change Attribute -- Rolling a dice </h1>
             <p> <input type="button" id="roll" value="roll" /> </p>
-            <p> <img src="img/die1.png"> </p>
+            <p> <img id="dies" src="img/die1.png"> </p>
             <table>
                 <tr>
                     <th>Result</th>
@@ -473,8 +473,9 @@
                 </tr>
             </table>
             <script>
+              var random = Math.floor(Math.random()*6)+1;
               var imgE= document.getElementById('dies');
-              imgE.setAttribute('src',"img/die3.png");
+              imgE.setAttribute('src','img/die'+random+'.png');
               </script>
 
         </div>
