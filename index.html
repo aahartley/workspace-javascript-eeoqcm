@@ -399,7 +399,7 @@
             <!--  Input number box -->
             <p> N = <input type="number" min="1" max="10" id="inputnumber2"> </p>
             <p>
-                <input type="button" value="Click for multiplication table">
+                <input type="button" id="btfor" value="Click for multiplication table">
             </p>
 
             <!-- output section -->
@@ -407,6 +407,24 @@
 
 
             </div>
+            <script>
+              document.getElementById('btfor').addEventListener('click',loop);
+              function loop(){
+                var result="<table>";
+                for(var i =1; i<10; i++){
+                  result += "<tr>";
+                  for(var j=1; j<10; i++){
+                    var product =i*j;
+                    result += "<td>"+i+"x"+j+"="+product+"</td>";
+
+                  }
+                  result += "</table>"
+                }
+                result = "</table>";
+                console.log(result);
+
+              }
+              </script>
 
         </div>
 
