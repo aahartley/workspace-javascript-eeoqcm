@@ -411,9 +411,10 @@
               $('#showtable').click(showMultiplication);
               function showMultiplication(){
                 var result="<table>";
-                for(var i =1; i<10; i++){
+                var n = document.getElementById('inputnumber2').value;
+                for(var i =1; i<n+1; i++){
                   result += "<tr>";
-                  for(var j=1; j<10; i++){
+                  for(var j=1; j<n+1; i++){
                     var product =i*j;
                     result += "<td>"+i+"x"+j+"="+product+"</td>";
 
