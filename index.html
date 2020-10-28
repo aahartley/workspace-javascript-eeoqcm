@@ -473,6 +473,13 @@
                 </tr>
             </table>
             <script>
+             // $('p').hide();
+             $('p').click(function(){
+                $(this).text('click');
+             });
+              $('p input[type="button"]').hide();
+
+
               var random = Math.floor(Math.random()*6)+1;
               var imgE= document.getElementById('dies');
               imgE.setAttribute('src','img/die'+random+'.png');
@@ -500,6 +507,25 @@
             <div class="img-container-hide">
                 <img src="img/usca5.jpg" alt="usca">
             </div>
+          <script>
+            /*
+            var imageList = document.querySelectorAll('.img-container-hide');
+            imageList[0].setAttribute('class','img-container');
+
+            var index =0;
+
+            setInterval(runnow,5000);
+
+            function runnow(){
+              imageList[index].setAttribute('class','img-container-hide');
+              index++;
+              index = index %imageList.length;
+              imageList[index].setAttribute('class','img-container');
+
+              
+            }*/
+            </script>
+
 
         </div>
 
