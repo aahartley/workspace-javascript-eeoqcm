@@ -446,6 +446,66 @@
             <h1> A simple JavaScript Quiz</h1>
             <p> A simple JavaScript Quiz </p>
             <p>Target: Generate 10 basic multiplication problems using JavaScript and check the answers</p>
+            <p id="quiz">
+				<span> </span> + <span></span> = <input type = "text" size="10">
+				<input type="button" value="Next">
+      </p>
+
+				<script>
+					//generate number from 1 to 10 
+          function gen(){
+            var num = Math.floor(Math.random()*10)+1;
+            return num;
+          }
+
+          // generate quiz 
+          $('#quiz span').each(function(){
+              // get the random number  -- try it with me
+              var num1 = gen();
+              $(this).text(num1);
+
+          });
+
+          // hide the next button --- try it with me. 
+          $('#quiz input[type="button"]').hide();
+          
+          // check answer
+          $('#quiz input[type="text"]').blur(function(){
+              var $A = $(this).prev();
+              var $B = $A.prev();
+              var ans = parseInt($A.text()) + parseInt($B.text());
+              if (parseInt($(this).val()) !== ans) {
+                  // highlight the answer
+                   $(this).css("background-color", "red");
+                } else {
+                  // if the answer is correct. background color be green and show the next button
+                   $(this).css("background-color", "green");
+
+                  $('#quiz input[type="button"]').show();
+
+
+
+
+              } 
+          });
+
+          //Get the next question --- try it 
+          $('#quiz input[type="button"]').click(function(){
+      // generate quiz 
+          $('#quiz span').each(function(){
+              // get the random number  -- try it with me
+              var num1 = gen();
+              $(this).text(num1);
+           $('#quiz input[type="text"]').val("");
+            $('#quiz input[type="text"').css("background-color", "white");
+
+
+          });
+
+          });
+
+
+				</script>
         </div>
 
         <div class="practice">
@@ -475,7 +535,7 @@
             <script>
              // $('p').hide();
              $('p').click(function(){
-                $(this).text('click');
+              //  $(this).text('click');
              });
               $('p input[type="button"]').hide();
 
